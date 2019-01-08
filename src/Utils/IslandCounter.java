@@ -80,11 +80,11 @@ public class IslandCounter {
 
         while (stack.size() != 0) {
             IslandNode currentNode = stack.pop();
-            int depth = currentNode.depth;
-            int i = currentNode.row;
-            int j = currentNode.column;
+            int depth = currentNode.getDepth();
+            int i = currentNode.getRow();
+            int j = currentNode.getColumn();
             islandMatrix[i][j] = -1;
-            path = path+depth+currentNode.direction;
+            path = path+depth+currentNode.getDirection();
 
             if (i -1 >= 0 && islandMatrix[i -1][j] == 1) {
                 stack.push(new IslandNode(i-1, j+1, depth + 1, "N"));
