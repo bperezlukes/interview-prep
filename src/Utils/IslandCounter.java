@@ -7,13 +7,13 @@ import java.util.Deque;
 import java.util.HashSet;
 import java.util.Set;
 
-public class IslandCounterUtil {
+public class IslandCounter {
     public static int getDistinctIslandCountRecursive(int[][] islandMatrix) {
         Set<String> islandSet = new HashSet<>();
 
-        for(int row=0; row<islandMatrix.length; row++) {
-            for(int col=0; col<islandMatrix[0].length; col++){
-                if(islandMatrix[row][col] == 1) {
+        for (int row=0; row<islandMatrix.length; row++) {
+            for (int col=0; col<islandMatrix[0].length; col++){
+                if (islandMatrix[row][col] == 1) {
                     //recurse
                     String path = "0X";
                     path = getIslandPathRecursive(islandMatrix, row, col, 1, path);
@@ -29,9 +29,9 @@ public class IslandCounterUtil {
     public static int getDistinctIslandCountIterative(int[][] islandMatrix) {
         Set<String> islandSet = new HashSet<>();
 
-        for(int row=0; row<islandMatrix.length; row++) {
-            for(int col=0; col<islandMatrix[0].length; col++){
-                if(islandMatrix[row][col] == 1) {
+        for (int row=0; row<islandMatrix.length; row++) {
+            for (int col=0; col<islandMatrix[0].length; col++){
+                if (islandMatrix[row][col] == 1) {
                     String path = getIslandPathIterative(islandMatrix, row, col);
                     System.out.println(path);
                     islandSet.add(path);
